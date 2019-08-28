@@ -46,15 +46,15 @@ getShop = (id) => {
 }
 
 addShop = (newShop) => {
-  global.shops.push(newShop);
+  return shopCollection.create(newShop);
 }
 
-updateShop = (i, shop)=> {
-  global.shops[i] = shop;
+updateShop = (shopId,updatedShop)=> {
+  return shopCollection.findByIdAndUpdate(shopId,updatedShop)
 }
 
-deleteShop =(i) => {
-  global.shops.splice(i, 1);
+deleteShopById = (id) =>{
+  return shopCollection.findOneAndDelete({_id:id})
 }
 
 /* Step 1

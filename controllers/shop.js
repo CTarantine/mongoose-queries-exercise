@@ -50,12 +50,12 @@ shopRouter.get('/', function (req, res) {
 
   shopRouter.post('/', function (req, res) {
     shopsApi.addShop(req.body);
-    res.status(200).end();
+    res.send(200).end();
   })
 
   shopRouter.put('/:index', function (req, res) {
     shopsApi.updateShop(req.params.index, req.body);
-    res.status(200).end();
+    res.send(200).end();
   })
 
   shopRouter.delete('/:index', function (req, res) {
